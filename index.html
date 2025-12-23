@@ -16,7 +16,6 @@
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.72);
       --stroke: rgba(255,255,255,.18);
-      --glass: rgba(0,0,0,.28);
 
       --btn: rgba(255,255,255,.92);
       --btnText: rgba(0,0,0,.92);
@@ -42,7 +41,7 @@
     /* Smooth scroll */
     html{ scroll-behavior:smooth; }
 
-    /* Scroll snap (tipo “slides”) */
+    /* Scroll snap (slides) */
     .slides{
       height: 100svh;
       overflow-y: auto;
@@ -51,7 +50,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* Topbar minimal */
+    /* Topbar */
     .topbar{
       position:fixed;
       top:0; left:0; right:0;
@@ -170,7 +169,7 @@
       font-weight: 600;
     }
 
-    /* Section / slide */
+    /* Slide */
     .section{
       height: 100svh;
       min-height: 640px;
@@ -184,7 +183,7 @@
       scroll-snap-stop: always;
     }
 
-    /* Fondo full-bleed + overlay */
+    /* Background */
     .bg{
       position:absolute;
       inset:0;
@@ -203,7 +202,7 @@
         linear-gradient(to top, rgba(0,0,0,.78), rgba(0,0,0,.12) 40%, rgba(0,0,0,.35));
     }
 
-    /* Contenido */
+    /* Content */
     .content{
       position:relative;
       width: 100%;
@@ -256,7 +255,7 @@
       -webkit-backdrop-filter: blur(10px);
     }
 
-    /* Botones abajo */
+    /* Bottom actions */
     .actions{
       position:absolute;
       left: 50%;
@@ -296,7 +295,7 @@
     }
     .btn.ghost:hover{ background: rgba(255,255,255,.16); }
 
-    /* Dots + progreso */
+    /* Dots + progress */
     .dotsWrap{
       position:absolute;
       left: 50%;
@@ -339,7 +338,7 @@
       transform-origin: left;
     }
 
-    /* Contacto slide (auto height) */
+    /* Contact section */
     .contact{
       height:auto;
       min-height: 0;
@@ -382,12 +381,10 @@
       margin-top: 10px;
     }
 
-    /* Accesibilidad: reduce motion */
+    /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
-      .btn{ transition:none; }
-      .dot{ transition:none; }
-      .menuBtn{ transition:none; }
+      .btn, .dot, .menuBtn{ transition:none; }
     }
 
     @media (max-width: 860px){
@@ -432,9 +429,8 @@
     </div>
   </div>
 
-  <!-- Slides container -->
+  <!-- Slides -->
   <div class="slides" id="slides">
-
     <!-- Slide 1 -->
     <section class="section" id="inicio" data-title="Inicio">
       <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=2400&q=80');"></div>
@@ -462,13 +458,11 @@
     <!-- Slide 2 -->
     <section class="section" id="hogar" data-title="Hogar">
       <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1617881770125-5b9c0b2b8f49?auto=format&fit=crop&w=2400&q=80');"></div>
-
       <div class="content">
         <h2>Hogar</h2>
         <p class="sub">Carga segura en casa con instalación discreta, protecciones y asesoría para elegir la potencia ideal.</p>
         <div class="pill">🏠 Casa · 🅿️ Condominios · ⚡ Instalación limpia</div>
       </div>
-
       <div class="actions">
         <button class="btn primary" data-go="#contacto">Agendar instalación</button>
         <button class="btn ghost" data-go="#negocio">Ver negocio</button>
@@ -478,13 +472,11 @@
     <!-- Slide 3 -->
     <section class="section" id="negocio" data-title="Negocio">
       <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6b7f2f26?auto=format&fit=crop&w=2400&q=80');"></div>
-
       <div class="content">
         <h2>Negocio</h2>
         <p class="sub">Convierte tu estacionamiento en un servicio premium: atrae clientes y mejora su permanencia.</p>
         <div class="pill">🏢 Plazas · 🏨 Hoteles · 🍽️ Restaurantes</div>
       </div>
-
       <div class="actions">
         <button class="btn primary" data-go="#contacto">Solicitar propuesta</button>
         <button class="btn ghost" data-go="#flotas">Ver flotas</button>
@@ -494,20 +486,18 @@
     <!-- Slide 4 -->
     <section class="section" id="flotas" data-title="Flotas">
       <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1616512659465-ef6ad7a2d2fa?auto=format&fit=crop&w=2400&q=80');"></div>
-
       <div class="content">
         <h2>Flotas</h2>
         <p class="sub">Planificación por etapas, control de consumo y operación diaria con reportes claros.</p>
         <div class="pill">🚚 Logística · 📈 Reportes · ⏱️ Carga programada</div>
       </div>
-
       <div class="actions">
         <button class="btn primary" data-go="#contacto">Hablar con ventas</button>
         <button class="btn ghost" data-go="#inicio">Inicio</button>
       </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- Contact -->
     <section class="section contact" id="contacto" data-title="Contacto">
       <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=2400&q=80');"></div>
 
@@ -537,7 +527,6 @@
         </div>
       </div>
     </section>
-
   </div>
 
   <script>
@@ -546,18 +535,18 @@
     const $$ = (q, el=document) => Array.from(el.querySelectorAll(q));
 
     const slidesEl = $("#slides");
-    const slideIds = ["#inicio", "#hogar", "#negocio", "#flotas"];
+    const slideIds = ["#inicio", "#hogar", "#negocio", "#flotas"]; // solo estas 4 cuentan para auto-slide
     const dots = $$(".dot");
     const bar = $("#bar");
+
+    // Config
+    const SLIDE_MS = 6000;        // cada cuánto cambia
+    const RESUME_AFTER_MS = 4500; // reanuda después de interacción
 
     let current = 0;
     let timer = null;
     let progressRAF = null;
-
-    // Config
-    const SLIDE_MS = 6000;          // cada cuánto cambia
-    const RESUME_AFTER_MS = 4500;   // reanuda después de interacción
-    const PAUSE_ON_HOVER_DESKTOP = true;
+    let resumeTO = null;
 
     function go(hash){
       const target = $(hash);
@@ -594,25 +583,6 @@
       }
     }
 
-    function next(){
-      current = (current + 1) % slideIds.length;
-      setActiveDot(current);
-      go(slideIds[current]);
-      restartProgress();
-    }
-
-    function stopAuto(){
-      if (timer) clearInterval(timer);
-      timer = null;
-      stopProgress();
-    }
-
-    function startAuto(){
-      stopAuto();
-      timer = setInterval(next, SLIDE_MS);
-      restartProgress();
-    }
-
     function stopProgress(){
       if (progressRAF) cancelAnimationFrame(progressRAF);
       progressRAF = null;
@@ -621,7 +591,7 @@
 
     function restartProgress(){
       stopProgress();
-      if (!bar) return;
+      if (!bar || !timer) return;
 
       const start = performance.now();
       const tick = (t) => {
@@ -632,20 +602,49 @@
       progressRAF = requestAnimationFrame(tick);
     }
 
-    // Click en dots
+    function stopAuto(){
+      if (timer) clearInterval(timer);
+      timer = null;
+      stopProgress();
+    }
+
+    function next(){
+      current = (current + 1) % slideIds.length;
+      setActiveDot(current);
+      go(slideIds[current]);
+      restartProgress();
+    }
+
+    function startAuto(){
+      stopAuto();
+      timer = setInterval(next, SLIDE_MS);
+      restartProgress();
+    }
+
+    function scheduleResume(){
+      if (resumeTO) clearTimeout(resumeTO);
+      resumeTO = setTimeout(() => startAuto(), RESUME_AFTER_MS);
+    }
+
+    // Click dots
     dots.forEach(dot => {
       dot.addEventListener("click", () => {
         const i = Number(dot.dataset.dot || "0");
         current = i;
         setActiveDot(current);
         go(slideIds[current]);
-        restartProgress();
+        stopAuto();
+        scheduleResume();
       });
     });
 
-    // Botones data-go
+    // Buttons data-go
     $$("[data-go]").forEach(btn=>{
-      btn.addEventListener("click", ()=> go(btn.getAttribute("data-go")));
+      btn.addEventListener("click", ()=> {
+        go(btn.getAttribute("data-go"));
+        stopAuto();
+        scheduleResume();
+      });
     });
 
     // Drawer
@@ -670,22 +669,19 @@
     drawer.addEventListener("click", (e)=>{ if(e.target === drawer) closeDrawerFn(); });
     $$(".drawerLink").forEach(a => a.addEventListener("click", closeDrawerFn));
 
-    // Pausar al interactuar, reanudar después
-    let resumeTO = null;
-    function scheduleResume(){
-      if (resumeTO) clearTimeout(resumeTO);
-      resumeTO = setTimeout(() => startAuto(), RESUME_AFTER_MS);
-    }
+    // ✅ IMPORTANTE: scroll solo sincroniza; NO pausa (para que el auto-slide SÍ funcione)
+    slidesEl.addEventListener("scroll", () => {
+      syncFromScroll();
+    }, { passive: true });
 
+    // Pausar SOLO con interacción real (no con scroll-snap)
     const pauseEvents = ["wheel","touchstart","keydown","mousedown"];
-    pauseEvents.forEach(evt => window.addEventListener(evt, () => { stopAuto(); scheduleResume(); }, {passive:true}));
-    slidesEl.addEventListener("scroll", () => { syncFromScroll(); stopAuto(); scheduleResume(); }, {passive:true});
-
-    // Pausar en hover (desktop)
-    if (PAUSE_ON_HOVER_DESKTOP){
-      slidesEl.addEventListener("mouseenter", () => stopAuto());
-      slidesEl.addEventListener("mouseleave", () => scheduleResume());
-    }
+    pauseEvents.forEach(evt =>
+      window.addEventListener(evt, () => {
+        stopAuto();
+        scheduleResume();
+      }, { passive: true })
+    );
 
     // Form demo
     $("#contactForm").addEventListener("submit", (e)=>{
