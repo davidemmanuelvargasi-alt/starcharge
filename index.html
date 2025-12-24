@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Star Charge</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-name">STAR CHARGE</span>
+    </div>
+
+    <button id="openMenu" class="glass-btn menu-btn" aria-label="Abrir menú">Menú</button>
+  </header>
+
+  <!-- Menú -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <aside class="menu-panel" role="dialog" aria-modal="true" aria-label="Menú">
+      <div class="menu-header">
+        <span class="menu-title">MENÚ</span>
+        <button id="closeMenu" class="close-btn" aria-label="Cerrar menú">✕</button>
+      </div>
+
+      <nav class="menu-links">
+        <a class="menu-item" href="#inicio" data-close-menu>Inicio</a>
+        <a class="menu-item" href="#hogar" data-close-menu>Hogar</a>
+        <a class="menu-item" href="#negocio" data-close-menu>Negocio</a>
+        <a class="menu-item" href="#flotas" data-close-menu>Flotas</a>
+        <a class="menu-item" href="#contacto" data-close-menu>Contacto</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Scroll vertical (secciones full-screen) -->
+  <main class="stack">
+    <!-- INICIO -->
+    <section id="inicio" class="panel hero" data-bg="https://images.unsplash.com/photo-1619767886558-efdc259cde1d?auto=format&fit=crop&w=2400&q=80">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="content">
+        <h1 class="title">
+          Estaciones de carga<br>
+          para vehículos eléctricos
+        </h1>
+        <p class="desc">
+          Instalación profesional y operación escalable. Experiencia limpia, rápida y confiable para clientes y flotas.
+        </p>
+
+        <div class="glass-pill">
+          <span>⚡ AC &amp; DC</span>
+          <span>🔒 Protección</span>
+          <span>📊 Monitoreo</span>
+        </div>
+
+        <div class="actions">
+          <a class="glass-btn cta primary" href="#contacto">Cotizar</a>
+          <a class="glass-btn cta" href="#negocio">Más información</a>
+        </div>
+
+        <div class="hint" aria-hidden="true">Desliza ↓</div>
+      </div>
+    </section>
+
+    <!-- HOGAR -->
+    <section id="hogar" class="panel" data-bg="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=2400&q=80">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="content">
+        <h2 class="title">Hogar</h2>
+        <p class="desc">
+          Carga segura y eficiente en casa. Instalación certificada, protecciones y configuración óptima.
+        </p>
+
+        <div class="glass-cards">
+          <div class="glass-card">
+            <div class="card-title">Instalación profesional</div>
+            <div class="card-sub">Cableado, protecciones y puesta a tierra.</div>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Compatibilidad</div>
+            <div class="card-sub">Niveles AC, configurables a tu vehículo.</div>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Soporte</div>
+            <div class="card-sub">Asistencia y mantenimiento preventivo.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="glass-btn cta primary" href="#contacto">Cotizar hogar</a>
+          <a class="glass-btn cta" href="#negocio">Ver negocio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEGOCIO -->
+    <section id="negocio" class="panel" data-bg="https://images.unsplash.com/photo-1605252686954-b0c8c4c7f9a7?auto=format&fit=crop&w=2400&q=80">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="content">
+        <h2 class="title">Negocio</h2>
+        <p class="desc">
+          Atrae clientes y monetiza con control de accesos, cobro, reportes y analítica.
+        </p>
+
+        <div class="glass-pill">
+          <span>🏢 Comercial</span>
+          <span>💳 Control &amp; Cobro</span>
+          <span>📈 Reportes</span>
+        </div>
+
+        <div class="actions">
+          <a class="glass-btn cta primary" href="#contacto">Quiero propuesta</a>
+          <a class="glass-btn cta" href="#flotas">Ver flotas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOTAS -->
+    <section id="flotas" class="panel" data-bg="https://images.unsplash.com/photo-1621972750749-0fbb1a8f8fda?auto=format&fit=crop&w=2400&q=80">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="content">
+        <h2 class="title">Flotas</h2>
+        <p class="desc">
+          Infraestructura robusta para operación diaria: carga rápida, monitoreo centralizado, mantenimientos y escalabilidad.
+        </p>
+
+        <div class="glass-cards">
+          <div class="glass-card">
+            <div class="card-title">Gestión centralizada</div>
+            <div class="card-sub">Estado, consumo y disponibilidad.</div>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Escalable</div>
+            <div class="card-sub">Crece por etapas sin fricción.</div>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Mantenimiento</div>
+            <div class="card-sub">Preventivo y correctivo con SLA.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="glass-btn cta primary" href="#contacto">Cotizar flota</a>
+          <a class="glass-btn cta" href="#inicio">Volver arriba</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="panel" data-bg="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2400&q=80">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+
+      <div class="content">
+        <h2 class="title">Contacto</h2>
+        <p class="desc">Déjanos tu mensaje y te respondemos rápido.</p>
+
+        <form class="glass-form" onsubmit="event.preventDefault(); alert('Listo. Aquí conectas tu formulario.');">
+          <input class="glass-input" type="text" placeholder="Nombre" required>
+          <input class="glass-input" type="email" placeholder="Correo" required>
+          <input class="glass-input" type="tel" placeholder="Teléfono">
+          <textarea class="glass-input" rows="4" placeholder="Cuéntanos tu proyecto" required></textarea>
+
+          <button class="glass-btn cta primary" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
